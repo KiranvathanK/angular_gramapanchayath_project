@@ -1,0 +1,26 @@
+li:not(:last-child){
+    border-right: 1px solid black;
+}
+li{
+    text-align: center;
+    padding: 1px 20px;
+    font-weight:bold;
+}
+li a {
+    display: block;
+    padding: 3px 160px;
+}
+.navbar-nav{
+    margin-left:28%;
+}
+
+#logout{
+    cursor:pointer;
+}
+
+#user-image{
+    border-radius:50%;
+    margin-top:1px;
+    width:40px;
+    height:40px;;
+}

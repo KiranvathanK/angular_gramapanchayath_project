@@ -1,0 +1,43 @@
+#waterimg{
+    float:left;
+    margin-top:13%;
+    margin-left:35px;
+    height:"30%"; 
+    width:"20%";
+}
+#treeimg{
+    float:right;
+    margin-top:13%;
+    margin-right:35px;
+    height:"30%"; 
+    width:"20%";
+}
+
+small{
+    font-size:30px;
+    font-weight:bold;
+    margin-left: 33%;
+}
+
+
+form{
+    background-color:#1e90ff;
+    padding:20px;
+    width:35%;
+    margin-left:33%;
+    margin-top:2%;
+}
+button{
+    margin-left: 33%;
+    background-color:darkblue;
+    width:30%;
+    padding:8px;
+    position:relative;
+    text-align: center;
+    border-radius:1ex;
+    box-sizing:border-box;
+    text-decoration: none;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.8);
+    background:linear-gradient(0deg,#3232CC,#3232CD);
+    transition:.2s;
+}

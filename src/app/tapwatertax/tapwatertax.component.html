@@ -1,0 +1,68 @@
+<div>
+    <form *ngIf="authService.isLoggedIn()"class="search-bar">
+        <p><b>Search By:</b><p>
+            <div class='container'>  
+                <div id='secondary-search'>
+                    <ul>
+                        <li><b>Property Id:&nbsp;</b><input type="text"
+                            (keyup)="getFilterPropertyIds()" 
+                            id="search-input" 
+                            name="property-id" 
+                            [(ngModel)]="filterPropertyids"
+                            placeholder="Enter Prperty Id"></li>
+                        <li><b>Previous Balance:&nbsp;</b><input type="text"
+                            (keyup)="getFilterPreviousBal()" 
+                            id="search-input" 
+                            name="previous-balance" 
+                            [(ngModel)]="filterPreviousbals"
+                            placeholder="Enter Previous Balance"></li>
+                    </ul>
+                </div>
+            <div id='secondary-search'>
+                    <ul id="inline">
+                        <li>&nbsp;&nbsp;<b>Owner:&nbsp;</b><input type="text"
+                            (keyup)="getFilterOwners()" 
+                            id="search-input" 
+                            name="owner" 
+                            [(ngModel)]="filterOwners"
+                            placeholder="Enter Owner Name"></li>
+                        <li><b>Total Balance:&nbsp;</b><input type="text"
+                            (keyup)="getFilterTotalBal()" 
+                            id="search-input" 
+                            type="text"  
+                            name="Total-balance" 
+                            [(ngModel)]="filterTotalbals"
+                            placeholder="Enter Total Balance">
+                        </li>
+                    </ul>
+            </div>
+            </div>
+    </form>
+</div>
+<div *ngIf="authService.isLoggedIn()" class="tableFixHead"> 
+    <table class="table table-striped">
+        <thead  class="thead">
+            <tr>
+                <th>PropertyId</th>
+                <th>OwnerName</th>
+                <th>PreviousBalance</th>
+                <th>CurrentBalance</th>
+                <th>ToatalBalance</th>
+                <th>Details</th>
+                <th>SendMessage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of filteredUsers">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.id}}</td>
+                <td>{{user.id}}</td>
+                <td>{{user.id}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.name}}</td>
+       
+            </tr>
+        </tbody>
+    </table>
+</div>

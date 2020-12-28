@@ -1,0 +1,21 @@
+div{
+    background-color:#1e90ff ;
+}
+h4,h2{
+    text-align: center;
+    padding:1px;
+    font-weight:bold;
+}
+#logo1{
+    float:left;
+    margin-left:20px;
+    height:80px;
+    padding:0;
+}
+#logo2{
+    float:right;
+    margin-right:20px;
+    height:80px;
+    padding:0;
+
+}

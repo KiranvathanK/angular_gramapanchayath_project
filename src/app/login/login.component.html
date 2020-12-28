@@ -1,0 +1,92 @@
+<div>
+  <img *ngIf="!authService.isLoggedIn()"  [src]="water" id="waterimg">
+  <img *ngIf="!authService.isLoggedIn()"  [src]="tree" id="treeimg">
+    <form *ngIf="!authService.isLoggedIn()" class="form-signin" #f="ngForm" (ngSubmit)="signIn(f.value)">
+      <small>Login</small>
+        <fieldset class="form-group">
+          <div class="row">
+            <label class="col-form-label col-sm-2 pt-0">Languages:</label>
+              <div class="col-sm-10">
+                <div class="form-check form-check-inline">
+                  &nbsp;&nbsp; <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1">
+                    <label class="form-check-label" for="gridRadios1">
+                      English
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" >
+                      <label class="form-check-label" for="gridRadios2">
+                          ಕನ್ನಡ
+                      </label>
+                </div>
+              </div>
+            </div>
+        </fieldset>
+          <div class="form-group row">
+            <label for="inputEmail" class="col-sm-2 col-form-label">Username</label>
+              <div class="col-sm-10">
+                <input type="email" name="email" ngModel class="form-control" id="inputEmail" placeholder="Username or Email">
+          </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-10">
+                <input type="password" name="password" ngModel class="form-control" id="inputPassword" placeholder="Password">
+          </div>
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-2" >Submit</button>
+              &nbsp;&nbsp;<input type="checkbox" id="inlineFormCheck">&nbsp;
+                <label class="form-check-label" for="inlineFormCheck">
+                  Remember me
+              </label>
+          </div>
+            <small class="register" routerLink="/register"><b>New User?Register Here</b></small>
+    </form>
+</div>
+
+
+
+
+
+
+
+<div *ngIf="!authService.isLoggedIn()"  class="row">
+	<div class="col-md-4">
+    <div class="card">
+      <div class="card-header">
+        Notifications
+      </div>
+      <div class="card-body" id="card1">
+        
+      </div>
+    </div>
+		
+	</div>
+	
+	<div class="col-md-4">
+		<div class="card">
+      <div class="card-header">
+        Alerts&Links
+      </div>
+      <div class="card-body" id="card2">
+        
+      </div>
+    </div>
+	</div>
+	<div class="col-md-4">
+    <div class="card">
+      <div class="card-header">
+        Awards
+      </div>
+      <div class="card-body" id="card3">
+       
+      </div>
+    </div>
+	</div>
+</div>
+
+  
+
+
+

@@ -1,0 +1,32 @@
+body{
+    background-color:#1e90ff;
+}
+button{
+    
+    width:18%;
+    padding:20px;
+    position:relative;
+    padding: 20px;
+    text-align: center;
+    margin:0 10px;
+    border-radius:1ex;
+    box-sizing:border-box;
+    text-decoration: none;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.8);
+    background:linear-gradient(0deg,#3232CC,#3232CD);
+    transition:.2s;
+}
+
+#property{
+    margin-left:30%;
+    margin-top:5%;
+}
+#reports{
+    margin-left:55%;
+    margin-top:5%;
+}
+#tapwater{
+    margin-left:30%;
+    margin-top:4%;
+    margin-bottom:5%
+}

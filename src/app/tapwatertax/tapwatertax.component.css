@@ -1,0 +1,66 @@
+.tableFixHead {
+  overflow-y: auto;
+  height: 335px;
+  margin-top:20px;
+}
+.tableFixHead thead th {
+  position: sticky;
+  top: 0;
+  height:50px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th,
+td {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+}
+th {
+  background:#1e90ff;
+
+}
+.container {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0;
+}
+ul{
+  list-style-type: none;
+  display: table;
+  width:100%;
+  padding: 0px;
+  border-spacing: 20px 0;
+}
+li{
+ 
+  display: table-cell;
+  width: 30%;
+}
+#inline{
+  margin-left:27px;
+}
+.search-bar{
+  background-color:#1e90ff ;
+  padding:20px;
+}
+input[type=text]{
+  border-radius: 6px;
+  border: 1px solid #aaa;
+  width:55%;
+  height:30px;
+  border:0;
+  outline: none;
+  box-sizing: border-box;
+  transition:2s;
+}
+input[type=text]:focus{
+  border-color:red;
+  box-shadow:0 0 8px 0 red;
+}
+p{
+  float:left;
+  font-size: 20px;
+}

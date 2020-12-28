@@ -1,0 +1,40 @@
+<div class="wrapper">
+	<span id="search-box">
+    <input 
+      (keyup)="getFilteredUsers()" 
+      class="col-lg-7" 
+      id="search-input" 
+      type="text"  
+      name="users" 
+      [(ngModel)]="filterString"
+      placeholder="Search by name">
+  </span></div><div>
+  <span id="search-box">
+    <input 
+      (keyup)="getFilterByMail()" 
+      class="col-lg-7" 
+      id="search-input" 
+      type="text"  
+      name="users" 
+      [(ngModel)]="filterEmails"
+      placeholder="Search by email">
+  </span>
+ 
+
+
+   
+      <tbody>
+        <tr *ngFor="let user of filteredUsers">
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+       </tr>
+        </tbody>
+      <!-- end  of .card-body-->
+
+</div><!--end of .wrapper -->

@@ -1,0 +1,27 @@
+body{
+    background-color:#1e90ff;
+}
+button{
+    
+    width:20%;
+    padding:20px;
+    position:relative;
+    padding: 18px;
+    text-align: center;
+    margin:0 10px;
+    border-radius:1ex;
+    box-sizing:border-box;
+    text-decoration: none;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.8);
+    background:linear-gradient(0deg,#3232CC,#3232CD);
+    transition:.2s;
+}
+#propertyreport{
+    margin-left:30%;
+    margin-top:8%;
+}
+#tapreport{
+    margin-left:55%;
+    margin-top:5%;
+    margin-bottom:7%;
+}
