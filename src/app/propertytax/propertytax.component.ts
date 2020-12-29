@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../services/auth.service';
 import { UsersService } from '../services/users.service';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription,combineLatest  } from 'rxjs';
 import { Member } from '../member';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -12,8 +13,7 @@ import { Member } from '../member';
   styleUrls: ['./propertytax.component.css']
 })
 export class PropertytaxComponent implements OnInit {
-
-users:Member[]= [];
+  user:any[]=[];
 filterPropertyids = '';
 filterPreviousbals = '';
 filterOwners ='';
@@ -23,16 +23,14 @@ filteredUsers: Member[]=[];
 subscription?: Subscription;
 
   constructor(private httpClient:HttpClient,
+   private route: ActivatedRoute,
    private authService:AuthService,
    private usersService: UsersService) { 
     
    }
    ngOnInit() {
-     this.httpClient.get<any>('https://jsonplaceholder.typicode.com/users')
-     .subscribe(response => {
-       this.users = response;
-     })
     this.serveUsers();
+    this.queryParams();
   }
 
 
@@ -56,6 +54,12 @@ subscription?: Subscription;
   }
   ngOnDestroy() {
     this.subscription && this.subscription.unsubscribe();
+  }
+
+  queryParams(){
+    this.route.paramMap.subscribe();
+    this.route.queryParamMap.subscribe();
+    this.usersService.getUsers().subscribe(users =>this.filteredUsers=users);
   }
 
 }

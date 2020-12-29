@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Member } from '../member';
 import { AuthService } from '../services/auth.service';
@@ -12,7 +13,7 @@ import { UsersService } from '../services/users.service';
   styleUrls: ['./tapwatertax.component.css']
 })
 export class TapwatertaxComponent implements OnInit {
-posts:any[]= [];
+
 filterPropertyids = '';
 filterPreviousbals = '';
 filterOwners ='';
@@ -22,17 +23,16 @@ filteredUsers: Member[]=[];
 subscription?: Subscription;
 
   constructor(private httpClient:HttpClient,
+    private route: ActivatedRoute,
    private authService:AuthService,
    private usersService: UsersService) { 
 
-    httpClient.get<any>("https://jsonplaceholder.typicode.com/users")
-    .subscribe(response =>{
-      this.posts = response;
-    });
+    
     
    }
    ngOnInit() {
     this.serveUsers();
+    this.queryParams();
   }
 
 
@@ -58,6 +58,11 @@ subscription?: Subscription;
     this.subscription && this.subscription.unsubscribe();
   }
 
+  queryParams(){
+    this.route.paramMap.subscribe();
+    this.route.queryParamMap.subscribe();
+    this.usersService.getUsers().subscribe(users =>this.filteredUsers=users);
+  }
 }
 
 

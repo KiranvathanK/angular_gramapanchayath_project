@@ -40,6 +40,7 @@ import { RegisterComponent } from './register/register.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,9 +74,6 @@ import { RegisterComponent } from './register/register.component';
     { path:'home',
       component: HomeComponent
     },
-    { path:'',
-    component: HomeComponent
-    },
     {
       path:'propertytax',
       component: PropertytaxComponent
@@ -107,7 +105,8 @@ import { RegisterComponent } from './register/register.component';
     fakeBackendProvider,
     MockBackend,
     BaseRequestOptions,
-    UsersService 
+    UsersService, 
+
     
     
     

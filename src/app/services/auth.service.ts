@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import { Router } from '@angular/router';
 import { JwtHelper, tokenNotExpired } from 'angular2-jwt';
 import 'rxjs/add/operator/map';
 
 @Injectable()
 export class AuthService {
-  constructor(private http: Http) {
+  constructor(private http: Http,
+    private router: Router) {
   }
 
   login(credentials) { 
@@ -23,6 +25,7 @@ export class AuthService {
 
   logout() { 
     localStorage.removeItem('token');
+    this.router.navigate(['/']);
   }
 
   isLoggedIn() { 

@@ -17,9 +17,8 @@ export class NavbarComponent implements OnInit {
   
 
   ngOnInit(){
-    this.route.paramMap.subscribe(params =>{
-      console.log(params.get('id'));
-    })
+    
+   
   }
 
 }

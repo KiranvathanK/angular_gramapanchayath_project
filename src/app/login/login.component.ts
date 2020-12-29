@@ -21,8 +21,7 @@ export class LoginComponent {
   constructor(
     private router: Router, 
     private authService: AuthService,
-    private toastr:ToastrService,
-){  }    
+    private toastr:ToastrService){  }    
 
 
 
@@ -34,7 +33,7 @@ export class LoginComponent {
     this.authService.login(credentials)
       .subscribe(result => { 
         if (result)
-          this.router.navigate(['/']);
+          this.router.navigate(['/home']);
         else  
         this.toastr.error('Invalid Username Or Password');
       });
