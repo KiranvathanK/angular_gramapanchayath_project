@@ -13,7 +13,6 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./propertytax.component.css']
 })
 export class PropertytaxComponent implements OnInit {
-  user:any[]=[];
 filterPropertyids = '';
 filterPreviousbals = '';
 filterOwners ='';

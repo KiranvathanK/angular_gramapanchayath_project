@@ -28,6 +28,7 @@ import { TapwatertaxComponent } from './tapwatertax/tapwatertax.component';
 import { UserdataComponent } from './userdata/userdata.component';
 import { UsersService } from './services/users.service';
 import { RegisterComponent } from './register/register.component';
+import { AuthGuardService } from './guard/auth-guard.service';
 
 
 
@@ -72,18 +73,25 @@ import { RegisterComponent } from './register/register.component';
 
     RouterModule.forRoot([
     { path:'home',
-      component: HomeComponent
+      component: HomeComponent,
+      canActivate:[AuthGuardService]
+    },
+    { path:'',
+    component: HomeComponent
     },
     {
       path:'propertytax',
-      component: PropertytaxComponent
+      component: PropertytaxComponent,
+      canActivate:[AuthGuardService]
     },
     {
       path:'tapwatertax',
-      component: TapwatertaxComponent
+      component: TapwatertaxComponent,
+      canActivate:[AuthGuardService]
     },
     { path:'reports',
-      component: ReportsComponent
+      component: ReportsComponent,
+      canActivate:[AuthGuardService]
     },
     { path:'login',
       component: LoginComponent
@@ -106,7 +114,7 @@ import { RegisterComponent } from './register/register.component';
     MockBackend,
     BaseRequestOptions,
     UsersService, 
-
+    AuthGuardService
     
     
     

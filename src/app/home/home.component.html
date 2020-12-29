@@ -1,5 +1,5 @@
 <body *ngIf="authService.isLoggedIn()">
-    <button type="button" class="btn btn-primary btn-lg" id="property"routerLink="/propertytax">Property Tax</button>
-    <button type="button" class="btn btn-primary btn-lg" id="reports" routerLink="/reports">Reports</button>
-    <button type="button" class="btn btn-primary btn-lg" id="tapwater" routerLink="/tapwatertax">Tap Water Tax</button>
+    <button type="button" class="btn btn-primary btn-lg" id="property"routerLink="/propertytax" [queryParams]="{page:1,order:'newest1'}">Property Tax</button>
+    <button type="button" class="btn btn-primary btn-lg" id="reports" routerLink="/reports" [queryParams]="{page:3,order:'newest3'}">Reports</button>
+    <button type="button" class="btn btn-primary btn-lg" id="tapwater" routerLink="/tapwatertax" [queryParams]="{page:2,order:'newest2'}">Tap Water Tax</button>
 </body>
