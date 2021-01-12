@@ -15,7 +15,7 @@ export class LoginComponent {
   tree:string="assets/images/tree.png";
   invalidLogin:any;
 
- 
+ loginUserData = {}
 
 
   constructor(
@@ -30,19 +30,15 @@ export class LoginComponent {
  
  
 
-  signIn(credentials) {
-    this.authService.login(credentials)
-      .subscribe(result => { 
-        if (result){
-          let returnUrl = this.route.snapshot.queryParamMap
-          .get('returnUrl');
-          this.router.navigate([returnUrl || '/']);
-        }
-        else  
-        this.toastr.error('Invalid Username Or Password');
-      });
-  }
+ 
   
+  loginUser(user){
+    this.authService.loginUser(this.loginUserData)
+    .subscribe(
+      res => console.log(res),
+      err => this.toastr.error('Invalid Username Or Password')
+    )
+  }
 
   
 }

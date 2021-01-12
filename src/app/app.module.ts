@@ -27,18 +27,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { TapwatertaxComponent } from './tapwatertax/tapwatertax.component';
 import { UserdataComponent } from './userdata/userdata.component';
 import { UsersService } from './services/users.service';
-import { RegisterComponent } from './register/register.component';
+
 import { AuthGuardService } from './guard/auth-guard.service';
-
-
-
-
-
-
-
-
-
-
+import { RegisterComponent } from './register/register.component';
 
 
 
@@ -54,7 +45,7 @@ import { AuthGuardService } from './guard/auth-guard.service';
     PropertytaxComponent,
     TapwatertaxComponent,
     UserdataComponent,
-    RegisterComponent,
+    RegisterComponent
 
 
 

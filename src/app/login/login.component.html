@@ -1,7 +1,7 @@
 <div>
   <img *ngIf="!authService.isLoggedIn()"  [src]="water" id="waterimg">
   <img *ngIf="!authService.isLoggedIn()"  [src]="tree" id="treeimg">
-    <form *ngIf="!authService.isLoggedIn()" class="form-signin" #f="ngForm" (ngSubmit)="signIn(f.value)">
+    <form *ngIf="!authService.isLoggedIn()" class="form-signin" >
       <small>Login</small>
         <fieldset class="form-group">
           <div class="row">
@@ -25,17 +25,17 @@
           <div class="form-group row">
             <label for="inputEmail" class="col-sm-2 col-form-label">Username</label>
               <div class="col-sm-10">
-                <input type="email" name="email" ngModel class="form-control" id="inputEmail" placeholder="Username or Email">
+                <input type="email"[(ngModel)]="loginUserData.email" name="email" ngModel class="form-control" id="inputEmail" placeholder="Username or Email">
           </div>
           </div>
           <div class="form-group row">
             <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
                 <div class="col-sm-10">
-                <input type="password" name="password" ngModel class="form-control" id="inputPassword" placeholder="Password">
+                <input type="password" [(ngModel)]="loginUserData.password" name="password" ngModel class="form-control" id="inputPassword" placeholder="Password">
           </div>
           </div>
           <div class="col-auto">
-            <button type="submit" class="btn btn-primary mb-2" >Submit</button>
+            <button type="button" (click)="loginUser()" class="btn btn-primary mb-2" >Submit</button>
               &nbsp;&nbsp;<input type="checkbox" id="inlineFormCheck">&nbsp;
                 <label class="form-check-label" for="inlineFormCheck">
                   Remember me
@@ -44,6 +44,12 @@
             <small class="register" routerLink="/register"><b>New User?Register Here</b></small>
     </form>
 </div>
+
+
+
+
+
+
 
 
 
